@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anbu pizza</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div style="width: 100vw">
+      <div
+        class="card text-center mt-3"
+        style="width: 18rem; left: 75%; position: absolute"
+      >
+        <p class="">Корзина</p>
+        <ul class="list-group list-group-flush" id="bucket">
+          <li class="list-group-item">Ничего не выбрано</li>
+        </ul>
+        <div class="btn btn-primary" id="make-order" style="display: none">
+          Сделать заказ
+        </div>
+      </div>
+      <div id="order-success" class="alert alert-success text-center d-none" role="alert">
+        Заказ успешно принят
+      </div>
+      <div id="order-fail" class="alert alert-danger text-center d-none" role="alert">
+        Заказ не принят. Проблемы с сервером.
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Добро пожаловать в пиццерию Анбу!</h1>
+
+      <div class="color-gray">Выберите пиццу</div>
+      <div class="row mt-5" id="pizza-menu">
+        <div class="card me-3" style="width: 18rem">
+          <img
+            src="https://papajohns.ru/assets/cover.a41b9c9b.png"
+            class="card-img-top"
+            style="height: 250px; width: 250px"
+            alt="..."
+          />
+          <div class="card-body items-align-center">
+            <h5 class="card-title text-center">Пицца фирменная</h5>
+            <p class="card-text text-center p-1">
+              Со вкусом ветчины, грибов и сыра
+            </p>
+            <a
+              href="#"
+              id="pizza-firm"
+              class="btn btn-primary pizza-btn"
+              name="Пицца фирменная"
+              >Добавить</a
+            >
+            <span class="ms-2">700 рублей</span>
+          </div>
+        </div>
+
+        <div class="card me-3" style="width: 18rem">
+          <img
+            src="https://storage.yandexcloud.net/pjproduction/images/catalog/thumbs/cart/Johns-Favorite-Traditional.jpg"
+            class="card-img-top"
+            style="height: 250px; width: 250px"
+            alt="..."
+          />
+          <div class="card-body items-align-center">
+            <h5 class="card-title text-center">Пицца запеченая</h5>
+            <p class="card-text text-center p-1">
+              Со вкусом салями, сыра и томатов
+            </p>
+            <a
+              href="#"
+              id="pizza-baked"
+              class="btn btn-primary pizza-btn"
+              name="Пицца запеченая"
+              >Добавить</a
+            >
+            <span class="ms-2">400 рублей</span>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://storage.yandexcloud.net/pjproduction/images/catalog/thumbs/cart/65c4b9a021952d7eff9051e723a07d69.jpg"
+            class="card-img-top"
+            style="height: 250px; width: 250px"
+            alt="..."
+          />
+          <div class="card-body items-align-center">
+            <h5 class="card-title text-center">Пицца с креветкой</h5>
+            <p class="card-text text-center p-1">
+              Креветки, сыр и кусочки перца. Что еще надо для счастья?
+            </p>
+            <a
+              href="#"
+              id="pizza-shrimp"
+              class="btn btn-primary pizza-btn"
+              name="Пицца с креветкой"
+              >Добавить</a
+            >
+            <span class="ms-2">500 рублей</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
