@@ -1,7 +1,9 @@
 package com.javaacademy.pizza.service;
 
+import com.javaacademy.pizza.dto.OrderDto;
 import com.javaacademy.pizza.dto.PizzaDto;
 import com.javaacademy.pizza.entity.Order;
+import com.javaacademy.pizza.mapper.OrderMapper;
 import com.javaacademy.pizza.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ public class OrderService {
     private final PizzaService pizzaService;
     private final OrderRepository orderRepository;
     private final NumberGenerator numberGenerator;
+    private final OrderMapper orderMapper;
 
     public String createNewOrder(Map<String, Integer> orderMap) {
         Order order = new Order();
@@ -44,5 +47,10 @@ public class OrderService {
         }
 
         return result;
+    }
+
+    public List<OrderDto> getAllOrders() {
+        List<Order> orders = orderRepository.findAll();
+        return orders.stream().map(orderMapper::convertToDto).toList();
     }
 }

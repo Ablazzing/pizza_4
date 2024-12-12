@@ -3,7 +3,9 @@ package com.javaacademy.pizza.storage;
 import com.javaacademy.pizza.entity.Order;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -15,6 +17,10 @@ public class OrderStorage {
             throw new RuntimeException("Заказ с таким номером уже есть");
         }
         data.put(order.getNumber(), order);
+    }
+
+    public List<Order> findAll() {
+        return new ArrayList<>(data.values());
     }
 
 
